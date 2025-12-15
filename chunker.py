@@ -14,7 +14,7 @@ def chunk_text(text, chunk_size=500, overlap=50):
 def process_page(page_data):
     # page_data: {url, title, raw_html} from crawler
     # Combined with extraction logic
-    from extractor import extract_content
+    from extractor.cleaner import extract_content
     
     cleaned_text = extract_content(page_data['html'])
     text_chunks = chunk_text(cleaned_text)
